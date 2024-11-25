@@ -1,13 +1,12 @@
-// Find the sum of all the multiples of 3 or 5 below 1000.
-
 #include <stdio.h>
 
+int sumOfNaturalNumbers(int n) {
+    if (n == 0) return 0;
+    return n + sumOfNaturalNumbers(n - 1);
+}
+
 int main() {
-    int sum = 0;
-    for (int i = 1; i < 1000; i++) {
-        if (i % 3 == 0 || i % 5 == 0)
-            sum += i;
-    }
-    printf("%d\n", sum);
+    int n = 5; 
+    printf("Sum of first %d natural numbers is: %d\n", n, sumOfNaturalNumbers(n));
     return 0;
 }

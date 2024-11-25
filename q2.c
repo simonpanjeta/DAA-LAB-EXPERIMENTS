@@ -1,16 +1,19 @@
-// Find all the roots of a quadratic equation ax2+bx+c=0
-
 #include <stdio.h>
-#include <math.h>
+
+void printFibonacci(int n) {
+    for (int i = 0; i < n; i++) {
+        printf("%d ", fibonacci(i));
+    }
+    printf("\n");
+}
+
+int fibonacci(int n) {
+    if (n <= 1) return n;
+    return fibonacci(n - 1) + fibonacci(n - 2);
+}
 
 int main() {
-    double a, b, c, d;
-    scanf("%lf %lf %lf", &a, &b, &c);
-    d = b*b - 4*a*c;
-    if (d >= 0) {
-        printf("Roots: %.2lf %.2lf\n", (-b + sqrt(d)) / (2*a), (-b - sqrt(d)) / (2*a));
-    } else {
-        printf("No real roots\n");
-    }
+    int n = 5; 
+    printFibonacci(n);
     return 0;
 }
